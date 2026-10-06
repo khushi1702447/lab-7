@@ -1,0 +1,59 @@
+﻿@model StudentFeedbackManagement.Models.Feedback
+
+<h2>Student Feedback Form</h2>
+
+@using (Html.BeginForm("Create", "Feedback", FormMethod.Post))
+{
+    <table border="1">
+
+        <tr>
+            <td>Student Name</td>
+            <td>
+                @Html.TextBoxFor(model => model.StudentName)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Student ID</td>
+            <td>
+                @Html.TextBoxFor(model => model.Id)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Subject</td>
+            <td>
+                @Html.TextBoxFor(model => model.Subject)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Rating</td>
+            <td>
+                @Html.TextBoxFor(model => model.Rating)
+                <br />
+                Enter rating between 1 and 5
+            </td>
+        </tr>
+
+        <tr>
+            <td>Comments</td>
+            <td>
+                @Html.TextAreaFor(model => model.Comments)
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Submit Feedback" />
+            </td>
+        </tr>
+
+    </table>
+}
+
+<br />
+
+<a href="@Url.Action("Index", "Feedback")">
+    Back to Home
+</a>

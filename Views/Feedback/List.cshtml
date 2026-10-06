@@ -1,0 +1,32 @@
+﻿@model IEnumerable<StudentFeedbackManagement.Models.Feedback>
+
+<h2>Student Feedback List</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Subject</th>
+        <th>Rating</th>
+        <th>Comments</th>
+    </tr>
+
+    @foreach (var feedback in Model)
+    {
+        <tr>
+            <td>@feedback.StudentName</td>
+            <td>@feedback.Id</td>
+            <td>@feedback.Subject</td>
+            <td>@feedback.Rating</td>
+            <td>@feedback.Comments</td>
+        </tr>
+    }
+
+</table>
+
+<br />
+
+<a href="@Url.Action("Create", "Feedback")">
+    Add New Feedback
+</a>

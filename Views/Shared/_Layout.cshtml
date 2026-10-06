@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>Student Feedback Management System</title>
+
+</head>
+
+<body>
+
+    @Html.Partial("_StudentInfo")
+
+    <a href="@Url.Action("Index", "Feedback")">
+        Home
+    </a>
+
+    |
+
+    <a href="@Url.Action("Create", "Feedback")">
+        Create Feedback
+    </a>
+
+    |
+
+    <a href="@Url.Action("List", "Feedback")">
+        Feedback List
+    </a>
+
+    <hr />
+
+    @RenderBody()
+
+</body>
+
+</html>
